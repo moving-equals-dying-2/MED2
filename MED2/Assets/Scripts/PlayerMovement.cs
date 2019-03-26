@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class PlayerMovement : MonoBehaviour{
+   public float speed;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   private Rigidybody2D rb;
+   private Vector2 moveVelocity;
+
+   void start() {
+       rb = GetComponent<Rigidybody2D>();
+   }
+
+   void update() {
+       vector2 moveInput = new Vector2(moveInput.GetAxis("Horizontal")); 
+       moveVelocity = moveInput * speed; 
+   }    
 }
